@@ -9,6 +9,7 @@ class Counter extends Component {
     super();
     this.state = {
       counter: 0,
+      secondCounter: 100,
     };
 
     this.increment = this.increment.bind(this);
