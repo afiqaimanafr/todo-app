@@ -10,21 +10,23 @@ class App extends Component {
     return (
       <div className="App">
         <Counter />
+        <Counter />
+        <Counter />
       </div>
     );
   }
 }
 
-class LearningComponents extends Component {
-  render() {
-    return (
-      <div className="LearningComponents">
-        Todo App!
-        <FirstComponent />
-        <SecondComponent />
-      </div>
-    );
-  }
-}
+// class LearningComponents extends Component {
+//   render() {
+//     return (
+//       <div className="LearningComponents">
+//         Todo App!
+//         <FirstComponent />
+//         <SecondComponent />
+//       </div>
+//     );
+//   }
+// }
 
 export default App;
