@@ -18,7 +18,7 @@ class Counter extends Component {
     const style = { fontSize: "50px", padding: "15px 30px" };
     return (
       <div className="counter">
-        <button onClick={this.increment}>+1</button>
+        <button onClick={this.increment}>{this.props.by}</button>
         <span style={style}>{this.state.counter}</span>
       </div>
     );
