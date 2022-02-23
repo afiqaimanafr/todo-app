@@ -10,15 +10,27 @@ class Counter extends Component {
     };
 
     this.increment = this.increment.bind(this);
+    this.decrement = this.decrement.bind(this);
   }
 
   render() {
     const style = { fontSize: "50px", padding: "15px 30px" };
     return (
       <div className="counter">
-        <CounterButton incrementMethod={this.increment} />
-        <CounterButton by={5} incrementMethod={this.increment} />
-        <CounterButton by={10} incrementMethod={this.increment} />
+        <CounterButton
+          incrementMethod={this.increment}
+          decrementMethod={this.decrement}
+        />
+        <CounterButton
+          by={5}
+          incrementMethod={this.increment}
+          decrementMethod={this.decrement}
+        />
+        <CounterButton
+          by={10}
+          incrementMethod={this.increment}
+          decrementMethod={this.decrement}
+        />
         <span style={style}>{this.state.counter}</span>
       </div>
     );
@@ -27,6 +39,12 @@ class Counter extends Component {
   increment(by) {
     this.setState((prevState) => {
       return { counter: prevState.counter + by };
+    });
+  }
+
+  decrement(by) {
+    this.setState((prevState) => {
+      return { counter: prevState.counter - by };
     });
   }
 }
@@ -42,6 +60,7 @@ class CounterButton extends Component {
     };
 
     this.increment = this.increment.bind(this);
+    this.decrement = this.decrement.bind(this);
   }
 
   render() {
@@ -49,7 +68,10 @@ class CounterButton extends Component {
     return (
       <div className="counter">
         <button style={style} onClick={this.increment}>
-          {this.props.by}
+          +{this.props.by}
+        </button>
+        <button style={style} onClick={this.decrement}>
+          -{this.props.by}
         </button>
         {/* <span style={style}>{this.state.counter}</span> */}
       </div>
@@ -64,6 +86,14 @@ class CounterButton extends Component {
     });
 
     this.props.incrementMethod(this.props.by);
+  }
+
+  decrement() {
+    this.setState({
+      counter: this.state.counter - this.props.by,
+    });
+
+    this.props.decrementMethod(this.props.by);
   }
 }
 
