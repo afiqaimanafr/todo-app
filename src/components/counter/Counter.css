@@ -1,11 +1,16 @@
-button{
-    background-color: green;
-    font-size: 16px;
-    padding: 15px 30px;
-    color: white;
-    width: 100px;
-    border-radius: 10px;
-    border: 2px solid black;
+button {
+  background-color: green;
+  font-size: 16px;
+  padding: 15px 30px;
+  color: white;
+  width: 100px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.reset {
+  background-color: red;
+  width: 200px;
 }
 
 /* .count{
