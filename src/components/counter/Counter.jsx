@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "./Counter.css";
 
 class Counter extends Component {
@@ -28,9 +29,17 @@ class Counter extends Component {
     // console.log("increment");
     // this.state.counter++;
     this.setState({
-      counter: this.state.counter + 1,
+      counter: this.state.counter + this.props.by,
     });
   }
 }
+
+Counter.defaultProps = {
+  by: 1,
+};
+
+Counter.propTypes = {
+  by: PropTypes.number,
+};
 
 export default Counter;
