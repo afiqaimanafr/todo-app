@@ -25,8 +25,8 @@ class Counter extends Component {
   }
 
   increment(by) {
-    this.setState({
-      counter: this.state.counter + by,
+    this.setState((prevState) => {
+      return { counter: prevState.counter + by };
     });
   }
 }
@@ -45,11 +45,13 @@ class CounterButton extends Component {
   }
 
   render() {
-    const style = { fontSize: "50px", padding: "15px 30px" };
+    const style = { padding: "15px 30px" };
     return (
       <div className="counter">
-        <button onClick={this.increment}>{this.props.by}</button>
-        <span style={style}>{this.state.counter}</span>
+        <button style={style} onClick={this.increment}>
+          {this.props.by}
+        </button>
+        {/* <span style={style}>{this.state.counter}</span> */}
       </div>
     );
   }
